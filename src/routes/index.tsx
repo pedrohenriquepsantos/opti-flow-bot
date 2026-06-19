@@ -23,7 +23,6 @@ import {
   Headphones,
   ChevronDown,
 } from "lucide-react";
-import logoAsset from "../assets/optflow-logo.png.asset.json";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -81,8 +80,9 @@ function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center gap-2">
           <Logo />
+          <span className="text-lg font-bold tracking-tight">OptFlow</span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -139,11 +139,9 @@ function Nav() {
 
 function Logo() {
   return (
-    <img
-      src={logoAsset.url}
-      alt="OptFlow"
-      className="h-10 w-auto"
-    />
+    <div className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-[var(--shadow-glow)]">
+      <Workflow className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+    </div>
   );
 }
 
