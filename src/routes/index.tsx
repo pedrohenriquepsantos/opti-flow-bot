@@ -139,9 +139,11 @@ function Nav() {
 
 function Logo() {
   return (
-    <div className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-[var(--shadow-glow)]">
-      <Workflow className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-    </div>
+    <img
+      src={logoAsset.url}
+      alt="OptFlow"
+      className="h-10 w-auto"
+    />
   );
 }
 
