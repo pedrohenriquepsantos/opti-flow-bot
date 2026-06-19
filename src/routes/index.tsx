@@ -23,6 +23,7 @@ import {
   Headphones,
   ChevronDown,
 } from "lucide-react";
+import logoAsset from "../assets/optflow-logo.png.asset.json";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
