@@ -81,9 +81,8 @@ function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center">
           <Logo />
-          <span className="text-lg font-bold tracking-tight">OptFlow</span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
