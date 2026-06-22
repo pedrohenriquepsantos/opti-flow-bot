@@ -68,6 +68,7 @@ function Landing() {
       <Differentiators />
       <Testimonials />
       <FAQ />
+      <StoreShopping />
       <FinalCTA />
       <Footer />
     </div>
