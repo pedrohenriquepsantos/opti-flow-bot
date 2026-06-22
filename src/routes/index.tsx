@@ -22,6 +22,13 @@ import {
   Shield,
   Headphones,
   ChevronDown,
+  ShoppingBag,
+  Shirt,
+  Footprints,
+  Watch,
+  Gem,
+  Tag,
+  MapPin,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -61,6 +68,7 @@ function Landing() {
       <Differentiators />
       <Testimonials />
       <FAQ />
+      <StoreShopping />
       <FinalCTA />
       <Footer />
     </div>
@@ -647,6 +655,79 @@ function FAQ() {
     </Section>
   );
 }
+
+/* ───────────────── STORE SHOPPING ───────────────── */
+function StoreShopping() {
+  const categories = [
+    { icon: Shirt, label: "Roupas" },
+    { icon: Footprints, label: "Calçados" },
+    { icon: Watch, label: "Acessórios" },
+    { icon: Gem, label: "Joias & Bijuterias" },
+  ];
+  const products = [
+    { name: "Camisa Linho Premium", price: "R$ 189,90", tag: "Novo", from: "from-primary/30 to-accent/20" },
+    { name: "Tênis Urbano Comfort", price: "R$ 329,00", tag: "-20%", from: "from-accent/30 to-primary/20" },
+    { name: "Jaqueta Jeans Slim", price: "R$ 259,90", tag: "Top", from: "from-primary/25 to-accent/30" },
+    { name: "Relógio Aço Inox", price: "R$ 449,00", tag: "Premium", from: "from-accent/25 to-primary/25" },
+  ];
+  return (
+    <Section id="loja" eyebrow="Compras na loja" title="Visite e leve as novidades da estação">
+      <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {categories.map(({ icon: Icon, label }) => (
+          <a
+            key={label}
+            href="#loja"
+            className="group flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-primary/40"
+          >
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
+              <Icon className="h-5 w-5 text-primary" />
+            </span>
+            <span className="text-sm font-semibold">{label}</span>
+            <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
+          </a>
+        ))}
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {products.map((p) => (
+          <article
+            key={p.name}
+            className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/40"
+          >
+            <div className={`relative aspect-square overflow-hidden bg-gradient-to-br ${p.from}`}>
+              <div className="absolute inset-0 grid-bg opacity-30" />
+              <ShoppingBag className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-foreground/30 transition-transform group-hover:scale-110" />
+              <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-semibold backdrop-blur">
+                <Tag className="h-3 w-3 text-primary" /> {p.tag}
+              </span>
+            </div>
+            <div className="p-4">
+              <h3 className="text-sm font-semibold leading-snug">{p.name}</h3>
+              <div className="mt-2 flex items-center justify-between">
+                <span className="text-base font-bold text-primary">{p.price}</span>
+                <span className="text-[11px] text-muted-foreground">Em estoque</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-gradient-to-r from-primary/10 to-accent/10 p-6 sm:flex-row">
+        <div className="flex items-center gap-3 text-sm">
+          <MapPin className="h-5 w-5 text-accent" />
+          <span className="font-medium">Venha conhecer nossa loja física e aproveite ofertas exclusivas.</span>
+        </div>
+        <a
+          href="#contato"
+          className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+        >
+          Como chegar <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
+    </Section>
+  );
+}
+
 
 /* ───────────────── FINAL CTA ───────────────── */
 function FinalCTA() {
