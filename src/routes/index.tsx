@@ -22,6 +22,13 @@ import {
   Shield,
   Headphones,
   ChevronDown,
+  ShoppingBag,
+  Shirt,
+  Footprints,
+  Watch,
+  Gem,
+  Tag,
+  MapPin,
 } from "lucide-react";
 import { useState } from "react";
 
