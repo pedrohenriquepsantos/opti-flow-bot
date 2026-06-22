@@ -29,6 +29,8 @@ import {
   Gem,
   Tag,
   MapPin,
+  Eye,
+  Heart,
 } from "lucide-react";
 import { useState } from "react";
 
