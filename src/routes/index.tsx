@@ -685,8 +685,8 @@ function StoreShopping() {
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 sm:h-10 sm:w-10">
               <Icon className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
             </span>
-            <span className="min-w-0 truncate text-xs font-semibold sm:text-sm">{label}</span>
-            <ArrowRight className="ml-auto h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
+            <span className="min-w-0 text-xs font-semibold leading-tight sm:text-sm">{label}</span>
+            <ArrowRight className="ml-auto hidden h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 sm:inline-flex sm:h-4 sm:w-4" />
           </a>
         ))}
       </div>
